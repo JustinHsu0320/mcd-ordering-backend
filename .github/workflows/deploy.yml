@@ -22,7 +22,8 @@ jobs:
 
       - name: Install Supabase CLI
         run: |
-          npm install -g supabase
+          curl -fsSL https://cli.supabase.com/install | sh
+          echo "$HOME/.supabase/bin" >> $GITHUB_PATH
 
       - name: Link to Supabase Project
         env:

@@ -1,0 +1,32 @@
+{
+  "name": "mcd-ordering-backend",
+  "version": "1.0.0",
+  "description": "Supabase backend for McDonald's-style scan-to-order system",
+  "type": "module",
+  "scripts": {
+    "start": "supabase start",
+    "stop": "supabase stop",
+    "reset": "supabase db reset",
+    "deploy": "supabase db push && supabase functions deploy",
+    "deploy:functions": "supabase functions deploy",
+    "serve:create-session": "supabase functions serve create-session",
+    "serve:create-order": "supabase functions serve create-order",
+    "serve:create-payment": "supabase functions serve create-payment",
+    "serve:payment-callback": "supabase functions serve payment-callback"
+  },
+  "keywords": [
+    "supabase",
+    "ordering-system",
+    "backend",
+    "edge-functions"
+  ],
+  "author": "PTC",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.0"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0"
+  }
+}

@@ -62,7 +62,7 @@ jobs:
       - name: Push Database Migrations
         run: |
           echo "📦 Pushing database migrations..."
-          supabase db push --include-all
+          supabase db remote commit
           echo "✅ Migrations pushed successfully"
 
       - name: Deploy Edge Functions

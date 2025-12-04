@@ -45,5 +45,5 @@ enable_confirmations = false
 enabled = true
 file_size_limit = "50MiB"
 
-[edge_functions]
+[functions]
 enabled = true

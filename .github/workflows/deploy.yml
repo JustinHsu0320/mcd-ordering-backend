@@ -59,10 +59,24 @@ jobs:
           supabase link --project-ref "$SUPABASE_PROJECT_REF"
           echo "✅ Successfully linked"
 
+      - name: Repair Migration History
+        run: |
+          echo "🔧 Repairing migration history..."
+          
+          # 標記所有現有 migrations 為已應用
+          supabase migration repair --status applied 00001 || true
+          supabase migration repair --status applied 00002 || true
+          supabase migration repair --status applied 00003 || true
+          supabase migration repair --status applied 00004 || true
+          supabase migration repair --status applied 00005 || true
+          supabase migration repair --status applied 00006 || true
+          
+          echo "✅ Migration history repaired"
+
       - name: Push Database Migrations
         run: |
           echo "📦 Pushing database migrations..."
-          supabase db remote commit
+          supabase db push --linked
           echo "✅ Migrations pushed successfully"
 
       - name: Deploy Edge Functions

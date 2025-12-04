@@ -64,9 +64,6 @@ jobs:
           echo "🔧 Repairing migration history..."
           
           # 標記所有現有 migrations 為已應用
-          supabase migration repair --status applied 00001 || true
-          supabase migration repair --status applied 00002 || true
-          supabase migration repair --status applied 00003 || true
           supabase migration repair --status applied 00004 || true
           supabase migration repair --status applied 00005 || true
           supabase migration repair --status applied 00006 || true

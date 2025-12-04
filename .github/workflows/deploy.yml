@@ -13,17 +13,16 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v5
         with:
           node-version: '23'
 
       - name: Install Supabase CLI
         run: |
-          curl -fsSL https://cli.supabase.com/install | sh
-          echo "$HOME/.supabase/bin" >> $GITHUB_PATH
+          brew install supabase/tap/supabase
 
       - name: Link to Supabase Project
         env:

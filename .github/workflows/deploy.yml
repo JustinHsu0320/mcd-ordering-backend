@@ -34,6 +34,7 @@ jobs:
         run: |
           echo 1
           echo $SUPABASE_ACCESS_TOKEN
+          echo $SUPABASE_PROJECT_REF
           echo 2
           supabase link --project-ref $SUPABASE_PROJECT_REF
 
